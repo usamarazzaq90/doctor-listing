@@ -1,5 +1,6 @@
 import Link from "next/link";
 import doctors from "../../../../../data/doctors";
+import { redirect } from "next/navigation";
 
 export default async function DoctorDetailPage({ params }:{
     params: Promise <{id: string}>
@@ -9,6 +10,7 @@ export default async function DoctorDetailPage({ params }:{
 
   // If doctor not found (invalid ID)
   if (!doctor) {
+    // redirect("/doctors");
     return (
       <main className="min-h-screen flex items-center justify-center">
         <div className="text-center">
